@@ -1,0 +1,82 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{fullpage,lastpage,enumerate,fancyhdr,mathrsfs,titlesec,graphicx,hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=3cm]{geometry}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage[italicdiff]{physics}
+\hypersetup{colorlinks=true,allcolors=blue}
+%\setcounter{secnumdepth}{4}
+\allowdisplaybreaks
+
+% Edit these as appropriate
+\newcommand\asgnname{}         % <-- assignment name
+\newcommand\course{CSE 397}
+\newcommand\prof{Dr. Sacks}  % <-- current prof
+\newcommand\yourname{Meenakshi Swaminathan}  % <-- your name
+\newcommand\login{ms69982}          % <-- your CS login
+
+\newenvironment{answer}[1]{
+    \subsubsection*{(#1)}
+}
+
+\title{Project Overview}
+\author{Akash Shukla and Meenakshi Swaminathan}
+\date{Digital Image and Video Processing}
+\begin{document}
+\maketitle
+
+\section*{The Process}
+Here is where we will write down some of the highlights during this project process
+\subsection*{Presentation Details}
+Here is where we will talk about the elements we want to include in our presentation so we do not forget.
+\begin{itemize}
+    \item And the Hackery Begins! Since we are working with a small dataset we need to perform much hackery for this network to learn what we want. 
+    \item A Wholesome Video - a wholesome video demo of the project in action with super wholesome music in the background.
+\end{itemize}
+\section*{Technical Deets}
+\subsection*{Hackery Ideas}
+This sub section will have overarching ideas on what we could do to overcome some engineering problems.
+\begin{itemize}
+    \item 3D projections as weights
+    \item Create our own weights using what statistically resembles weights
+    \item Generate “images” where there are trash can shapes in the foreground/background
+
+    \item Using laws of perspective for distance/depth
+\end{itemize}
+
+\subsection*{Protocol for Device/Localizer}
+The Needs:
+\newline
+\begin{itemize}
+    \item To find a trash can
+    \item Localize the trash can
+    \item Update location in real time
+    \item Knowing where the opening is (don't want something unsanitary)
+    \item Putting trash in trash can
+\end{itemize}
+Protocol:
+\newline
+\begin{itemize}
+    \item Strip that attaches to the cane or something that you wear around your wrist
+    \item Localization is circular around the wrist (haptic feedback with diff intensity levels)
+    \item Wrist because it can tell you how to put it in there 
+    \item Also depending on task the protocol can be transferrable to other tasks too
+\end{itemize}
+
+\section*{The Market}
+\begin{itemize}
+    \item It isn’t a small market … 
+    \item 285 M visually impaired
+    \item 39 M completely blind
+    \item 90 percent live in the developing world - so sellable
+    \item USD 500/device with even 5 percent market penetration is USD 1B
+\end{itemize}
+
+\section*{Challenges}
+\begin{itemize}
+    \item Safety - need to account for hazardous situations - cant be making person cross streets, construction areas
+\end{itemize}
+
+\end{document}
