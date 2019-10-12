@@ -1,0 +1,2 @@
+https://groups.csail.mit.edu/vision/datasets/ADE20K/
+https://groups.csail.mit.edu/vision/datasets/ADE20K/
