@@ -5,3 +5,5 @@ https://groups.csail.mit.edu/vision/datasets/ADE20K/
 https://www.cs.umd.edu/~jonf/publications/Hong_EvaluatingAngularAccuracyOfWristBasedHapticDirectionalGuidanceForHandMovement_GI2016.pdf
 
 http://cocodataset.org/#home
+
+https://gluon-cv.mxnet.io/build/examples_detection/finetune_detection.html#sphx-glr-download-build-examples-detection-finetune-detection-py
