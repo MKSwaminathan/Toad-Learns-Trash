@@ -3,3 +3,5 @@ https://groups.csail.mit.edu/vision/datasets/ADE20K/
 
 # Haptic Guidance Paper 
 https://www.cs.umd.edu/~jonf/publications/Hong_EvaluatingAngularAccuracyOfWristBasedHapticDirectionalGuidanceForHandMovement_GI2016.pdf
+
+http://cocodataset.org/#home
