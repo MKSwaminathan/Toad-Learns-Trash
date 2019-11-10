@@ -1,11 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from gluoncv.data import ADE20KSegmentation
 import matplotlib.image as mpimg
-from gluoncv.utils.viz import get_color_pallete
-# coding: utf-8
-#jpg=plt.imread('ADE_train_00020000.jpg')
-#png = plt.imread('ADE_train_00020000_seg.png')
 
 
 def count_obj(img):
@@ -65,7 +60,8 @@ def get_box(labeled_img):
         roi2[i,xmin:xmax,ymin-2:ymin+2]=1
         roi2[i,xmin:xmax,ymax-2:ymax+2]=1
         i+=1
-    return roi2, roi, labels[1:]
+        box = [xmin,xmax, ymin, ymax  ]
+    return box, roi2, roi, labels[1:]
 
 
 
@@ -95,7 +91,7 @@ import scipy as sc
 from scipy import ndimage
 label_im, nb_labels = ndimage.label(trash)
 
-boxes, filled,nlabels=get_box(label_im)
+box, boxes, filled,nlabels=get_box(label_im)
 fig2,ax2=plt.subplots(len(nlabels))
 for n in range(nlabels.max()):
     ax2[n].imshow(boxes[n],cmap='gray')
