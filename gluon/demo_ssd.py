@@ -43,7 +43,7 @@ net = model_zoo.get_model('ssd_512_resnet50_v1_voc', pretrained=True)
 #im_fname = utils.download('https://github.com/dmlc/web-data/blob/master/' +
 #                          'gluoncv/detection/street_small.jpg?raw=true',
 #                          path='street_small.jpg')
-im_fname='/home/akash/school/image_processing/Toad-Learns-Trash/data2/00000001.jpg'
+im_fname='/home/akash/school/image_processing/Toad-Learns-Trash/data2/00000000.jpg'
 x, img = data.transforms.presets.ssd.load_test(im_fname, short=512)
 print('Shape of pre-processed image:', x.shape)
 
