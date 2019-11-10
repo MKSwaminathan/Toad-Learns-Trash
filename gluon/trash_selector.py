@@ -60,7 +60,7 @@ def get_box(labeled_img):
         roi2[i,xmin:xmax,ymin-2:ymin+2]=1
         roi2[i,xmin:xmax,ymax-2:ymax+2]=1
         i+=1
-        box = [xmin,xmax, ymin, ymax  ]
+        box = [xmin,xmax, ymin, ymax]
     return box, roi2, roi, labels[1:]
 
 
