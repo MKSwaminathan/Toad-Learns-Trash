@@ -57,15 +57,17 @@ def get_trash():
     raw = [url for url in urls if 'seg' not in url]
     #seg = urls[1:len(urls):2]
     seg = [url for url in urls if 'seg' in url]
-    for url in urls:
-        utils.download(url, path=outpath)
+    for ra in raw:
+        utils.download(ra, path='trash_images/'+ra[-22:])
+    for se in seg:
+        utils.download(se, path='trash_images/'+se[-26:])
     #lpath = os.path.abspath('')+'/trash_labels'
     # os.mkdir(lpath)
     #trash_boxes = np.zeros((len(urls), 4), dtype='str')
     with open('val.lst', 'w') as fw:
         for i in range(len(raw)):
-            img = plt.imread(outpath+'/'+raw[i][-22:])
-            l_img = plt.imread(outpath+'/'+seg[i][-26:])
+            img = plt.imread('trash_images'+'/'+raw[i][-22:])
+            l_img = plt.imread('trash_images'+'/'+seg[i][-26:])
             l_img = label_trash(l_img)
             #trash_boxes[i, :], w, h, ids = get_box(img)
             trash_box, w, h, ids = get_box(l_img)
@@ -78,7 +80,7 @@ def get_trash():
             str_idx = [str(i)]
             str_header = [str(x) for x in [A, B, C, D]]
             str_labels = [str(x) for x in labels]
-            str_path = [outpath+'/'+raw[i]]
+            str_path = [outpath+'/'+raw[i][-22:]]
             line = '\t'.join(str_idx + str_header +
                              str_labels + str_path) + '\n'
             fw.write(line)
