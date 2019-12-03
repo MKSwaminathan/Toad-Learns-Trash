@@ -1,8 +1,9 @@
-import mxnet as mx
 import time
 from matplotlib import pyplot as plt
 import numpy as np
 import mxnet as mx
+from mxnet import nd, gluon, init, autograd
+from mxnet.gluon import nn
 from mxnet import autograd, gluon
 import gluoncv as gcv
 from gluoncv.utils import download, viz
@@ -18,9 +19,8 @@ classes = ['trash']  # only one foreground class here
 #net = gcv.model_zoo.get_model('ssd_512_mobilenet1.0_voc', pretrained=True)
 # net.reset_class(classes)
 
-net = gcv.model_zoo.get_model('ssd_512_mobilenet1.0_custom', classes=classes,
-                              pretrained_base=False, transfer='voc')
-
+net = gcv.model_zoo.get_model('ssd_512_mobilenet1.0_custom', classes=classes, pretrained_base=True, transfer='voc')
+#net = gcv.model_zoo.get_model('yolo3_darknet53_custom', pretrained_base=False,classes=['trash'] ,transfer='voc') 
 
 def get_dataloader(net, train_dataset, data_shape, batch_size, num_workers):
     from gluoncv.data.batchify import Tuple, Stack, Pad
@@ -61,7 +61,7 @@ for epoch in range(0, 2):
     smoothl1_metric.reset()
     tic = time.time()
     btic = time.time()
-    net.hybridize(static_alloc=True)#, static_shape=True)
+    #net.hybridize()#(static_alloc=True)#, static_shape=True)
     for i, batch in enumerate(train_data):
         batch_size = batch[0].shape[0]
         data = gluon.utils.split_and_load(batch[0], ctx_list=ctx, batch_axis=0)
