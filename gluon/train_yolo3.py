@@ -325,7 +325,9 @@ if __name__ == '__main__':
             async_net.initialize()
 
     # training data
-    train_dataset, val_dataset, eval_metric = get_dataset(args.dataset, args)
+    dataset = gcv.data.RecordFileDetection('val.rec')
+    classes = ['trash']  # only one foreground class here
+    train_dataset, val_dataset, eval_metric = get_dataset(dataset, args)
     train_data, val_data = get_dataloader(
         async_net, train_dataset, val_dataset, args.data_shape, args.batch_size, args.num_workers, args)
 

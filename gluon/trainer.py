@@ -16,10 +16,10 @@ classes = ['trash']  # only one foreground class here
 #ax = viz.plot_bbox(image, bboxes=label[:, :4], labels=label[:, 4:5], class_names=classes)
 #plt.show()
 
-#net = gcv.model_zoo.get_model('ssd_512_mobilenet1.0_voc', pretrained=True)
-# net.reset_class(classes)
+net = gcv.model_zoo.get_model('ssd_512_mobilenet1.0_voc', pretrained=True)
+net.reset_class(classes)
 
-net = gcv.model_zoo.get_model('ssd_512_mobilenet1.0_custom', classes=classes, pretrained_base=True, transfer='voc')
+#net = gcv.model_zoo.get_model('ssd_512_mobilenet1.0_custom', classes=classes, pretrained_base=True, transfer='voc')
 #net = gcv.model_zoo.get_model('yolo3_darknet53_custom', pretrained_base=False,classes=['trash'] ,transfer='voc') 
 
 def get_dataloader(net, train_dataset, data_shape, batch_size, num_workers):
@@ -47,7 +47,8 @@ except:
     ctx = [mx.cpu()]
 
 
-net.collect_params().reset_ctx(ctx)
+net.load_parameters('ssd_512_mobilenet1.0_trash.params')
+#net.collect_params().reset_ctx(ctx)
 trainer = gluon.Trainer(
     net.collect_params(), 'sgd',
     {'learning_rate': 0.001, 'wd': 0.0005, 'momentum': 0.9})
@@ -56,12 +57,12 @@ mbox_loss = gcv.loss.SSDMultiBoxLoss()
 ce_metric = mx.metric.Loss('CrossEntropy')
 smoothl1_metric = mx.metric.Loss('SmoothL1')
 
-for epoch in range(0, 2):
+for epoch in range(0, 6):
     ce_metric.reset()
     smoothl1_metric.reset()
     tic = time.time()
     btic = time.time()
-    #net.hybridize()#(static_alloc=True)#, static_shape=True)
+    net.hybridize()#(static_alloc=True)#, static_shape=True)
     for i, batch in enumerate(train_data):
         batch_size = batch[0].shape[0]
         data = gluon.utils.split_and_load(batch[0], ctx_list=ctx, batch_axis=0)

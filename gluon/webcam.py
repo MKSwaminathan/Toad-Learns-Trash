@@ -1,15 +1,15 @@
 import time
 
 import gluoncv as gcv
-from gluoncv.utils import try_import_cv2
-cv2 = try_import_cv2()
+import cv2
 import mxnet as mx
+classes=['trash']
 
 # Load the model
 #net = gcv.model_zoo.get_model('ssd_512_mobilenet1.0_voc', pretrained=True)
 net = gcv.model_zoo.get_model('ssd_512_mobilenet1.0_custom', classes=classes, pretrained_base=False)
-net.load_parameters('ssd_512_mobilenet1.0_trash.params')
-# Compile the model for faster speed
+net.load_parameters('ssd_512_mobilenet1.0_trash_backup_2_2_6ep.params')
+# Comnet = denoisingNetwork('dncnn');pile the model for faster speed
 net.hybridize()
 
 #Load the webcam handler
@@ -30,7 +30,7 @@ for i in range(NUM_FRAMES):
     class_IDs, scores, bounding_boxes = net(rgb_nd)
 
     # Display the result
-    img = gcv.utils.viz.cv_plot_bbox(frame, bounding_boxes[0], scores[0], class_IDs[0], class_names=net.classes)
+    img = gcv.utils.viz.cv_plot_bbox(frame, bounding_boxes[0], scores[0], class_IDs[0], class_names=net.classes)#,thresh=0.4)
     gcv.utils.viz.cv_plot_image(img)
     cv2.waitKey(1)
 
