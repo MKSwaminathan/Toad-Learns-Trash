@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex Template"] 1576040686 "Template.aux" "Template.bbl" "Template" 1576040687
+["bibtex Template"] 1576041900 "Template.aux" "Template.bbl" "Template" 1576041901
   "./IEEEbib.bst" 1575860987 17902 d17ce47b20649379bfa5bce95e55ed5b ""
-  "Template.aux" 1576040687 2358 66f52cb56c80854f42f8c1b749c3cf70 "pdflatex"
+  "Template.aux" 1576041901 2570 1d13bfe39a8fd7a67d7d034aa45648b8 "pdflatex"
   "references.bib" 1576039917 2551 6127bfc722eeb0305bc5e057f1acbac2 ""
   (generated)
   "Template.bbl"
   "Template.blg"
-["pdflatex"] 1576040686 "Template.tex" "Template.pdf" "Template" 1576040687
+["pdflatex"] 1576041901 "Template.tex" "Template.pdf" "Template" 1576041901
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -32,7 +32,9 @@
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb" 1136849748 45758 19968a0990191524e34e1994d4a31cb6 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb" 1136849748 44729 811d6c62865936705a31c797a1d5dada ""
@@ -77,14 +79,16 @@
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1557342086 4259635 562fc36ec496993777a6c428d8bfb811 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "Template.aux" 1576040687 2358 66f52cb56c80854f42f8c1b749c3cf70 "pdflatex"
-  "Template.bbl" 1576040686 1261 2ddfd44c6282c135d1fae96e610bb451 "bibtex Template"
-  "Template.tex" 1576040684 11442 60790b382331d963d8f43cb77bd3b78e ""
+  "Template.aux" 1576041901 2570 1d13bfe39a8fd7a67d7d034aa45648b8 "pdflatex"
+  "Template.bbl" 1576041901 1261 2ddfd44c6282c135d1fae96e610bb451 "bibtex Template"
+  "Template.tex" 1576041898 12694 09eb15681e5ed90cef803207ba4db2d7 ""
+  "fullres.jpg" 1576041565 316503 29ed0aeaddcef225003f26b672aab422 ""
   "hapticmotors.JPG" 1576038896 3271866 81cc471c7b9ed3081265b92bbe2bc816 ""
   "lit.JPG" 1576038896 1951476 93286e82fddbb75786a65e5d39778a53 ""
+  "processed.jpg" 1576041554 178204 ccb330fb9038a746b78e49f78320b519 ""
   "spconf.sty" 1575860987 8797 eb955f603576c283c1c29eaa8124a014 ""
   "worn.JPG" 1576038896 1948632 e5d92193c1ac9bf2d7dded06cdb6496f ""
   (generated)
-  "Template.log"
   "Template.aux"
   "Template.pdf"
+  "Template.log"

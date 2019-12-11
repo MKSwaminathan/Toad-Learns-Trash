@@ -95,7 +95,7 @@ For this device, we used an Intel Realsense D435 camera to use to detect the tra
 \subsection{FRAME PRE-PROCESSING}
 \label{ssec:frprep}
 
-Ultimately, this device is supposed to be a wearable device, and we kept that in mind as we determined the frame image pre-processing. From training our model, discussed in the model section, we realized that we did not need such a high resolution for the model to work and detect the trash can, so we experimented with downsampling amounts, given by the following forrmula, $J(i) = I(Li)]$ \cite{Bovik19}, where L is the downsampling rate. We used OpenCV \cite{opencv_library} to specify the end dimensions instead of L. We found that we could donwsample the image as much as half its dimensions, or $L = 2$ and the model still worked just as well. This also helped the latency of the device. 
+Ultimately, this device is supposed to be a wearable device, and we kept that in mind as we determined the frame image pre-processing. From training our model, discussed in the model section, we realized that we did not need such a high resolution for the model to work and detect the trash can, so we experimented with downsampling amounts, given by the following forrmula, $J(i) = I(Li)]$ \cite{Bovik19}, where L is the downsampling rate. We used OpenCV \cite{opencv_library} to specify the end dimensions instead of L. We found that we could donwsample the image as much as half its dimensions, or $L = 2$ and the model still worked just as well. This also helped the latency of the device. Refer to \textbf{Fig 1.} to see difference in images. 
 
 \subsection{DATA PRUNING AND CONNECTED COMPONENT LABELING}
 \label{ssec:dataprune}
@@ -112,12 +112,36 @@ We used a platform called Gluon \cite{gluoncvnlp2019} that allowed us to create 
 
 As we trained the model on our trash can images, we noticed that there was not a very high confidence value given to a trash can and the model generalized dark rectangular objects as trash cans when they were not. To account for this, since we had limited data as well, we used several image processing techniques to feed in better images into the network. We experimented with several prssibilities and combinations, including edge filtering and Felsenszwalb's graph based image segmentation to boost edges, and ended up chosing a combination of median filtering and erosion with a crosshair kernel on the image. The intuition behind using a median filter was that it denoised the image enough so that it eliminated noise but maintained the edge details of the trash cans. The erosion was used because the Realsense produced small white dots that were distorting the image slightly. 
 
+\begin{center}
+\begin{figure}
+%
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+  \centerline{\includegraphics[width=4.0cm]{fullres.jpg}}
+%  \vspace{1.5cm}
+  \centerline{(a) No downsample, unprocessed}\medskip
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+  \centerline{\includegraphics[width=4.0cm]{processed.jpg}}
+%  \vspace{1.5cm}
+  \centerline{(b) Downsample, processed}\medskip
+\end{minipage}
+%
+\caption{Disparity in model confidence between pure and processed frames.}
+\label{figures2}
+%
+\end{figure}
+\end{center}
+
+
+
+
 \subsection{BINOCULAR CAMERA GEOMETRY AND TRIANGULATION FOR DEPTH APPROXIMATION}
 \label{ssec:triangulation}
 
-Subheadings should appear in lower case (initial word capitalized) in
-boldface.  They should start at the left margin on a separate line.
- 
+In order to get an approximate depth measurement to notify the user how far away the trash can is, we used binocular camera geometry and triangulation properties. We first took the horizontal disparity betwwen the images, the lens focal lengths, and the distance between the two stereoscopic lenses. Next we used the triangulation equation, $Z_0 = \frac{2Df}{dx}$ \cite{Bovik19} to approximate the depth Z. We had to do some calibration (in essence, multiply by sclars and then project the results in the [0,9] interval for the embedded systems component) to get the depth to work. We then cross referenced this with the percentage of the y-axis component of the bounding box with the total height of the frame to make sure that our triangulation equation was working approximately well. 
 
 \subsection{THE DEVICE}
 \label{ssec:thedevice}
