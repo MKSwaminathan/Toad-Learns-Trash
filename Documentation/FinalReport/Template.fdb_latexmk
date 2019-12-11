@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex Template"] 1576042593 "Template.aux" "Template.bbl" "Template" 1576042736
+["bibtex Template"] 1576042593 "Template.aux" "Template.bbl" "Template" 1576044817
   "./IEEEbib.bst" 1575860987 17902 d17ce47b20649379bfa5bce95e55ed5b ""
-  "Template.aux" 1576042736 2699 0ce3c5d16f143727decad2dc247978df "pdflatex"
+  "Template.aux" 1576044817 2699 0ce3c5d16f143727decad2dc247978df "pdflatex"
   "references.bib" 1576039917 2551 6127bfc722eeb0305bc5e057f1acbac2 ""
   (generated)
   "Template.blg"
   "Template.bbl"
-["pdflatex"] 1576042735 "Template.tex" "Template.pdf" "Template" 1576042736
+["pdflatex"] 1576044816 "Template.tex" "Template.pdf" "Template" 1576044817
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -78,9 +78,9 @@
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1557342086 4259635 562fc36ec496993777a6c428d8bfb811 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "Template.aux" 1576042736 2699 0ce3c5d16f143727decad2dc247978df "pdflatex"
+  "Template.aux" 1576044817 2699 0ce3c5d16f143727decad2dc247978df "pdflatex"
   "Template.bbl" 1576042593 1261 2ddfd44c6282c135d1fae96e610bb451 "bibtex Template"
-  "Template.tex" 1576042733 12875 0e2fa8adf1248132bed19e4c4c0e2e55 ""
+  "Template.tex" 1576044816 12990 3cd4d78ebffa69ae28a9d6b08910628a ""
   "fullres.jpg" 1576041565 316503 29ed0aeaddcef225003f26b672aab422 ""
   "hapticmotors.JPG" 1576038896 3271866 81cc471c7b9ed3081265b92bbe2bc816 ""
   "lit.JPG" 1576038896 1951476 93286e82fddbb75786a65e5d39778a53 ""
@@ -88,6 +88,6 @@
   "spconf.sty" 1575860987 8797 eb955f603576c283c1c29eaa8124a014 ""
   "worn.JPG" 1576038896 1948632 e5d92193c1ac9bf2d7dded06cdb6496f ""
   (generated)
-  "Template.pdf"
-  "Template.log"
   "Template.aux"
+  "Template.log"
+  "Template.pdf"
