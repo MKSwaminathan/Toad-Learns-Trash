@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  10 DEC 2019 23:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  10 DEC 2019 23:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -178,34 +178,34 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 
 
 ]
-Underfull \hbox (badness 1270) in paragraph at lines 100--100
+Underfull \hbox (badness 1270) in paragraph at lines 97--97
 \OT1/ptm/b/n/10 3.3. DATA PRUN-ING AND CON-NECTED COM-PO-
  []
 
-<fullres.jpg, id=11, 1354.05875pt x 1155.31625pt>
+<fullres.jpg, id=13, 1354.05875pt x 1155.31625pt>
 File: fullres.jpg Graphic file (type jpg)
 <use fullres.jpg>
-Package pdftex.def Info: fullres.jpg  used on input line 120.
+Package pdftex.def Info: fullres.jpg  used on input line 117.
 (pdftex.def)             Requested size: 113.81102pt x 97.09879pt.
-<processed.jpg, id=12, 1320.935pt x 1158.3275pt>
+<processed.jpg, id=14, 1320.935pt x 1158.3275pt>
 File: processed.jpg Graphic file (type jpg)
 <use processed.jpg>
-Package pdftex.def Info: processed.jpg  used on input line 127.
+Package pdftex.def Info: processed.jpg  used on input line 124.
 (pdftex.def)             Requested size: 113.81102pt x 99.79097pt.
-<worn.JPG, id=13, 4047.12pt x 3035.34pt>
+<worn.JPG, id=15, 4047.12pt x 3035.34pt>
 File: worn.JPG Graphic file (type jpg)
 <use worn.JPG>
-Package pdftex.def Info: worn.JPG  used on input line 160.
+Package pdftex.def Info: worn.JPG  used on input line 157.
 (pdftex.def)             Requested size: 241.84842pt x 181.37149pt.
-<hapticmotors.JPG, id=14, 4047.12pt x 3035.34pt>
+<hapticmotors.JPG, id=16, 4047.12pt x 3035.34pt>
 File: hapticmotors.JPG Graphic file (type jpg)
 <use hapticmotors.JPG>
-Package pdftex.def Info: hapticmotors.JPG  used on input line 167.
+Package pdftex.def Info: hapticmotors.JPG  used on input line 164.
 (pdftex.def)             Requested size: 113.81102pt x 85.31314pt.
-<lit.JPG, id=15, 4047.12pt x 3035.34pt>
+<lit.JPG, id=17, 4047.12pt x 3035.34pt>
 File: lit.JPG Graphic file (type jpg)
 <use lit.JPG>
-Package pdftex.def Info: lit.JPG  used on input line 174.
+Package pdftex.def Info: lit.JPG  used on input line 171.
 (pdftex.def)             Requested size: 113.81102pt x 85.31314pt.
 [2 <./fullres.jpg> <./processed.jpg>] (./Template.bbl
 Underfull \hbox (badness 7099) in paragraph at lines 4--7
@@ -214,18 +214,18 @@ Underfull \hbox (badness 7099) in paragraph at lines 4--7
 
 ) [3 <./worn.JPG> <./hapticmotors.JPG> <./lit.JPG>] (./Template.aux) ) 
 Here is how much of TeX's memory you used:
- 2274 strings out of 492616
- 30762 string characters out of 6129482
- 103638 words of memory out of 5000000
- 6151 multiletter control sequences out of 15000+600000
+ 2275 strings out of 492616
+ 30771 string characters out of 6129482
+ 102646 words of memory out of 5000000
+ 6152 multiletter control sequences out of 15000+600000
  21023 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,10n,25p,915b,333s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Template.pdf (3 pages, 7784098 bytes).
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Template.pdf (3 pages, 7777103 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 56 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
