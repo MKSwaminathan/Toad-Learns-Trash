@@ -53,31 +53,16 @@ Image processing, object detection, assistive technology
 \section{INTRODUCTION}
 \label{sec:intro}
 
-These guidelines include complete descriptions of the fonts, spacing, and
-related information for producing your proceedings manuscripts. Please follow
-them and if you have any questions, direct them to Conference Management
-Services, Inc.: Phone +1-979-846-6800 or email
-to \\\texttt{papers@2018.ieeeicip.org}.
-
+We have developed a wearable device to assist blind people in navigation, specifically in finding public trash cans. The device identifies and detects the position of nearby trash cans using an Intel Realsense camera and provides vibrational feedback via a wrist band controlled by a RaspberryPi 3 to indicate this location to the wearer. The software for localizing the trash cans employs image processing algorithms in combination with machine learning and has been developed in Python. Although this device is only a starting point, the project could be extended to detect many other objects.
 
 \section{RELATED WORK}
 \label{sec:research}
+Several tools to assist the visually impaired in navigation using computer vision have been developed. 
+A project from Stanford called ‘Let Blind People See’ detects objects and converts their position into 3D sound to help blind people locate them~\cite{LetBlind}.
 
-To achieve the best rendering both in printed proceedings and electronic proceedings, we
-strongly encourage you to use Times-Roman font.  In addition, this will give
-the proceedings a more uniform look.  Use a font that is no smaller than nine
-point type throughout the paper, including figure captions.
+Another study uses vibrational feedback similar to that used our device to help the visually impaired avoid obstacles~\cite{Kinect}. This study indicated that haptic feedback at the wrist is one of the most effective methods of guidance for the blind.
 
-In nine point type font, capital letters are 2 mm high.  {\bf If you use the
-smallest point size, there should be no more than 3.2 lines/cm (8 lines/inch)
-vertically.}  This is a minimum spacing; 2.75 lines/cm (7 lines/inch) will make
-the paper much more readable.  Larger type sizes require correspondingly larger
-vertical spacing.  Please do not double-space your paper.  TrueType or
-Postscript Type 1 fonts are preferred.
-
-The first paragraph in each section should not be indented, but all the
-following paragraphs within the section should be indented as these paragraphs
-demonstrate.
+These projects guided the development of our device, which includes elements of both, localizing a specific object and providing haptic feedback for guidance.
 
 \section{PROCESS}
 \label{sec:theprocess}
@@ -185,13 +170,12 @@ The device is in the form of a wrist band that contains a 2-dimensional array of
 
 \section{RESULTS}
 \label{sec:results}
-
-Use footnotes sparingly (or not at all!) and place them at the bottom of the
-column on the page on which they are referenced. Use Times 9-point type,
-single-spaced. To help your readers, avoid using footnotes altogether and
-include necessary peripheral observations in the text (within parentheses, if
-you prefer, as in this sentence).
-
+We tested the device by blindfolding ourselves and equipping the wristband as shown in Figure 3 and camera then relying on the haptic feedback to guide us to the trash can. Figure 4 shows an example of the bounding box our device detected for a trash can the user encountered.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.6\columnwidth]{boxed_can.png}
+    \caption{\label{fig:3} Example Bounding Box}
+\end{figure}
 
 
 \section{CONCLUSION}

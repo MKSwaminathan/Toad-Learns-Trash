@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex Template"] 1576044945 "Template.aux" "Template.bbl" "Template" 1576044946
+["bibtex Template"] 1576052174 "Template.aux" "Template.bbl" "Template" 1576052174
   "./IEEEbib.bst" 1576037989 17902 d17ce47b20649379bfa5bce95e55ed5b ""
-  "Template.aux" 1576044946 2819 da90420608e6f0d9d51fe529b6bd5696 "pdflatex"
-  "references.bib" 1576044133 3146 118e9ecb1eaf495406fb6460f62be2af ""
+  "Template.aux" 1576052174 3047 347dce77b131531b2b4185b923036580 "pdflatex"
+  "references.bib" 1576050863 4803 a2825cb8fc9c9b62ef8442b73928a226 ""
   (generated)
   "Template.blg"
   "Template.bbl"
-["pdflatex"] 1576044945 "Template.tex" "Template.pdf" "Template" 1576044946
+["pdflatex"] 1576052174 "Template.tex" "Template.pdf" "Template" 1576052174
   "/etc/texmf/web2c/texmf.cnf" 1575413766 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/akash/.texlive2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1574820795 4702851 72358dca78abca0cb952f9f977af8c06 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -69,9 +69,10 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1575846954 38842 929a1d7a93d5a7ba93034bbe3531fec4 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1575846954 38842 929a1d7a93d5a7ba93034bbe3531fec4 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1575919908 4297078 bf6491a002577251f618292025bb26d0 ""
-  "Template.aux" 1576044946 2819 da90420608e6f0d9d51fe529b6bd5696 "pdflatex"
-  "Template.bbl" 1576044945 1794 d4cfa93d44b1537e11adf1a17a384bcf "bibtex Template"
-  "Template.tex" 1576044929 13222 d2d8d64191caa39fa6a94434e1e43f14 ""
+  "Template.aux" 1576052174 3047 347dce77b131531b2b4185b923036580 "pdflatex"
+  "Template.bbl" 1576052174 2286 866a929f7d8bfae8465e2107d370a13c "bibtex Template"
+  "Template.tex" 1576052171 13385 7d11f7a08f7cec3deb2363962c12166d ""
+  "boxed_can.png" 1576051705 94237 5c47e6a1ad9340528ad2dd67387ce075 ""
   "fullres.jpg" 1576042003 316503 29ed0aeaddcef225003f26b672aab422 ""
   "hapticmotors.JPG" 1576042003 3271866 81cc471c7b9ed3081265b92bbe2bc816 ""
   "lit.JPG" 1576042003 1951476 93286e82fddbb75786a65e5d39778a53 ""
@@ -80,5 +81,5 @@
   "worn.JPG" 1576042003 1948632 e5d92193c1ac9bf2d7dded06cdb6496f ""
   (generated)
   "Template.log"
-  "Template.pdf"
   "Template.aux"
+  "Template.pdf"

@@ -1,4 +1,17 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{LetBlind}
+Rui Jiang, Qian Lin, and Shuhui Qu,
+\newblock ``Let blind people see: Real-time visual recognition with results
+  converted to 3d audio,''
+\newblock 03 2016.
+
+\bibitem{Kinect}
+F.~{Ahmad}, {Tanveerulhaq}, I.~{Ishaq}, D.~{Ali}, and M.~F. {Riaz},
+\newblock ``Bionic kinect device to assist visually impaired people by haptic
+  and voice feedback,''
+\newblock in {\em 2016 International Conference on Bio-engineering for Smart
+  Technologies (BioSMART)}, Dec 2016, pp. 1--4.
 
 \bibitem{realsense}
 Intel,
