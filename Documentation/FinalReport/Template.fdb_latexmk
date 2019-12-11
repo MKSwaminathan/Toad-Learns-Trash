@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex Template"] 1575862288 "Template.aux" "Template.bbl" "Template" 1575862289
+["bibtex Template"] 1576035970 "Template.aux" "Template.bbl" "Template" 1576035970
   "./IEEEbib.bst" 1575860987 17902 d17ce47b20649379bfa5bce95e55ed5b ""
-  "Template.aux" 1575862289 2169 96ff679896fc77ff7995bba85f7ceb8f "pdflatex"
+  "Template.aux" 1576035970 2279 dfc92168afa32dd6dcd990ed5edb59c1 "pdflatex"
   "refs.bib" 1575860987 245 0aa0bf81f340a906e0f64945f4032473 ""
   "strings.bib" 1575860987 225 a7a1e30a4dbf091bbadb81624102c966 ""
   (generated)
   "Template.bbl"
   "Template.blg"
-["pdflatex"] 1575862288 "Template.tex" "Template.pdf" "Template" 1575862289
+["pdflatex"] 1576035970 "Template.tex" "Template.pdf" "Template" 1576035970
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -75,14 +75,14 @@
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1557342086 4259635 562fc36ec496993777a6c428d8bfb811 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "Template.aux" 1575862289 2169 96ff679896fc77ff7995bba85f7ceb8f "pdflatex"
-  "Template.bbl" 1575862288 359 387c80c1dff1f9b3dfb7899fdee0e157 "bibtex Template"
-  "Template.tex" 1575862286 9151 7c01e914ca9c3b3024e7419e281f2b45 ""
+  "Template.aux" 1576035970 2279 dfc92168afa32dd6dcd990ed5edb59c1 "pdflatex"
+  "Template.bbl" 1576035970 201 0abfea4e3325c140415c97976609e213 "bibtex Template"
+  "Template.tex" 1576035968 9907 f4e5ce5824aa23e0090a716f0b3fb5af ""
   "image1.eps" 1575860987 24261 d1d13439ab81baa20bb873ed8c6ef89f ""
   "image3.eps" 1575860987 24252 5b989dc50d98d66a6a1a9b1181eddf09 ""
   "image4.eps" 1575860987 23170 20aab41daeefce8233fac7ae189a2193 ""
   "spconf.sty" 1575860987 8797 eb955f603576c283c1c29eaa8124a014 ""
   (generated)
   "Template.log"
-  "Template.aux"
   "Template.pdf"
+  "Template.aux"

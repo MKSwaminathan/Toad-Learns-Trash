@@ -43,20 +43,14 @@
 \maketitle
 %
 \begin{abstract}
-The abstract should appear at the top of the left-hand column of text, about
-0.5 inch (12 mm) below the title area and no more than 3.125 inches (80 mm) in
-length.  Leave a 0.5 inch (12 mm) space between the end of the abstract and the
-beginning of the main text.  The abstract should contain about 100 to 150
-words, and should be identical to the abstract text submitted electronically
-along with the paper cover sheet.  All manuscripts must be in English, printed
-in black ink.
+With 324 million people blind and visually impaired in the world and the cane still being the primary assistive device used, we approached this problem by looking at it through a different lens. Quite literally a lens. Through involvement with the National Federation of the Blind, we learned that trivial tasks such as finding a public trash can is almost impossible with merely a cane. Using cameras to help the blind is a pre-existing domain, however, we decided to attack this subproblem of navigating the user to public trash cans. Although seemingly trivial, this concept can be expanded to solve larger, problems such as steering the blind away from hazardous construction, reading signs, and perhaps one day driving (unless self driving cars are prominent by then).
 \end{abstract}
 %
 \begin{keywords}
-One, two, three, four, five
+Image processing, object detection, assistive technology
 \end{keywords}
 %
-\section{Introduction}
+\section{INTRODUCTION}
 \label{sec:intro}
 
 These guidelines include complete descriptions of the fonts, spacing, and
@@ -65,30 +59,9 @@ them and if you have any questions, direct them to Conference Management
 Services, Inc.: Phone +1-979-846-6800 or email
 to \\\texttt{papers@2018.ieeeicip.org}.
 
-\section{Formatting your paper}
-\label{sec:format}
 
-All printed material, including text, illustrations, and charts, must be kept
-within a print area of 7 inches (178 mm) wide by 9 inches (229 mm) high. Do
-not write or print anything outside the print area. The top margin must be 1
-inch (25 mm), except for the title page, and the left margin must be 0.75 inch
-(19 mm).  All {\it text} must be in a two-column format. Columns are to be 3.39
-inches (86 mm) wide, with a 0.24 inch (6 mm) space between them. Text must be
-fully justified.
-
-\section{PAGE TITLE SECTION}
-\label{sec:pagestyle}
-
-The paper title (on the first page) should begin 1.38 inches (35 mm) from the
-top edge of the page, centered, completely capitalized, and in Times 14-point,
-boldface type.  The authors' name(s) and affiliation(s) appear below the title
-in capital and lower case letters.  Papers with multiple authors and
-affiliations may require two or more lines for this information. Please note
-that papers should not be submitted blind; include the authors' names on the
-PDF.
-
-\section{TYPE-STYLE AND FONTS}
-\label{sec:typestyle}
+\section{RELATED WORK}
+\label{sec:research}
 
 To achieve the best rendering both in printed proceedings and electronic proceedings, we
 strongly encourage you to use Times-Roman font.  In addition, this will give
@@ -106,30 +79,67 @@ The first paragraph in each section should not be indented, but all the
 following paragraphs within the section should be indented as these paragraphs
 demonstrate.
 
-\section{MAJOR HEADINGS}
-\label{sec:majhead}
+\section{PROCESS}
+\label{sec:theprocess}
 
 Major headings, for example, "1. Introduction", should appear in all capital
 letters, bold face if possible, centered in the column, with one blank line
 before, and one blank line after. Use a period (".") after the heading number,
 not a colon.
 
-\subsection{Subheadings}
-\label{ssec:subhead}
+\subsection{REALSENSE CAMERA}
+\label{ssec:realsense}
+
+For this device, we used an Intel Realsense D435 camera to use to detect the trash cans. We chose this because of its relatively small size and since it had two lenses that we could extrapolate depth from. The camera also had depth sensing capabilities, but we chose not to use that and instead use triangulation properties to infer depth because if this device were to become an actual product, the cost of obtaining a camera with depth capabilities are significantly more expensive than using two cameras side by side. The horizontal FOV (field of vision) for the Realsense camera is 86 degrees and the vertical is 57 degrees. We used the librealsense python interface \[\] to capture the individual frames to use for processing. We did not have the capabilities to change the frame of the camera, but we instead modulated the rate at which we sampled the frame in software. 
+
+\subsection{FRAME PRE-PROCESSING}
+\label{ssec:frprep}
+
+Ultimately, this device is supposed to be a wearable device, and we kept that in mind as we determined the frame image pre-processing. From training our model, discussed in the model section, we realized that we did not need such a high resolution for the model to work and detect the trash can, so we experimented with downsampling 
+
+\subsection{DATA PRUNING AND CONNECTED COMPONENT LABELING}
+\label{ssec:dataprune}
 
 Subheadings should appear in lower case (initial word capitalized) in
 boldface.  They should start at the left margin on a separate line.
  
-\subsubsection{Sub-subheadings}
-\label{sssec:subsubhead}
+\subsection{THE MODEL}
+\label{ssec:themodel}
 
-Sub-subheadings, as in this paragraph, are discouraged. However, if you
-must use them, they should appear in lower case (initial word
-capitalized) and start at the left margin on a separate line, with paragraph
-text beginning on the following line.  They should be in italics.
+Subheadings should appear in lower case (initial word capitalized) in
+boldface.  They should start at the left margin on a separate line.
+ 
+\subsection{BOOSTING ACCURACY VIA POST TRAINING IMAGE PROCESSING}
+\label{ssec:boosting}
 
-\section{PRINTING YOUR PAPER}
-\label{sec:print}
+Subheadings should appear in lower case (initial word capitalized) in
+boldface.  They should start at the left margin on a separate line.
+ 
+\subsection{BINOCULAR CAMERA GEOMETRY AND TRIANGULATION FOR DEPTH APPROXIMATION}
+\label{ssec:triangulation}
+
+Subheadings should appear in lower case (initial word capitalized) in
+boldface.  They should start at the left margin on a separate line.
+ 
+
+\subsection{THE DEVICE}
+\label{ssec:thedevice}
+
+The device is in the form of a wrist band that contains a 2-dimensional array of haptic motors to relay angular position and distance feedback to the user corresponding to the found trash can. The corresponding LED grid was only for demo purposes so that the audience can view which haptic motors are being activated. We decided on a wrist cuff since the study from the paper, Guiding Blind People with Haptic Feedback, found that the wrist and spine were the best places to detect vibrational impulses \[\]. In their study they used 2 wristbands, but we decided to go with one wristband representing 86 degrees since this was the horizontal FOV (field of vision) of the Intel Realsense camera.
+
+\section{RESULTS}
+\label{sec:results}
+
+Use footnotes sparingly (or not at all!) and place them at the bottom of the
+column on the page on which they are referenced. Use Times 9-point type,
+single-spaced. To help your readers, avoid using footnotes altogether and
+include necessary peripheral observations in the text (within parentheses, if
+you prefer, as in this sentence).
+
+
+
+\section{CONCLUSION}
+\label{sec:conclusion}
 
 Print your properly formatted text on high-quality, 8.5 x 11-inch white printer
 paper. A4 paper is also acceptable, but please leave the extra 0.5 inch (12 mm)
@@ -141,13 +151,6 @@ one long column.
 In LaTeX, to start a new column (but not a new page) and help balance the
 last-page column lengths, you can use the command ``$\backslash$pagebreak'' as
 demonstrated on this page (see the LaTeX source below).
-
-\section{PAGE NUMBERING}
-\label{sec:page}
-
-Please do {\bf not} paginate your paper.  Page numbers, session numbers, and
-conference identification will be inserted when the paper is included in the
-proceedings.
 
 \section{ILLUSTRATIONS, GRAPHS, AND PHOTOGRAPHS}
 \label{sec:illust}
@@ -162,15 +165,6 @@ black-only printer.
 Since there are many ways, often incompatible, of including images (e.g., with
 experimental results) in a LaTeX document, below is an example of how to do
 this \cite{Lamp86}.
-
-\section{FOOTNOTES}
-\label{sec:foot}
-
-Use footnotes sparingly (or not at all!) and place them at the bottom of the
-column on the page on which they are referenced. Use Times 9-point type,
-single-spaced. To help your readers, avoid using footnotes altogether and
-include necessary peripheral observations in the text (within parentheses, if
-you prefer, as in this sentence).
 
 % Below is an example of how to insert images. Delete the ``\vspace'' line,
 % uncomment the preceding line ``\centerline...'' and replace ``imageX.ps''
@@ -211,24 +205,6 @@ you prefer, as in this sentence).
 %\vfill
 %\pagebreak
 
-\section{COPYRIGHT FORMS}
-\label{sec:copyright}
-
-You must include your fully completed, signed IEEE copyright release form when
-form when you submit your paper. We {\bf must} have this form before your paper
-can be published in the proceedings.
-
-\section{REFERENCES}
-\label{sec:ref}
-
-List and number all bibliographical references at the end of the
-paper. The references can be numbered in alphabetic order or in
-order of appearance in the document. When referring to them in
-the text, type the corresponding reference number in square
-brackets as shown at the end of this sentence \cite{C2}. An
-additional final page (the fifth page, in most cases) is
-allowed, but must contain only references to the prior
-literature.
 
 % References should be produced using the bibtex program from suitable
 % BiBTeX files (here: strings, refs, manuals). The IEEEbib.bst bibliography
