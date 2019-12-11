@@ -101,8 +101,10 @@ Since the portion of ImageNet that corresponded with trash can images was under 
 
 \subsection{THE MODEL}
 \label{ssec:themodel}
-
-We used a platform called Gluon \cite{gluoncvnlp2019} that allowed us to create a transfer learning model to learn the trash cans. We used a MobileNet1.0 model to learn the trash cans. Since we did not need all the object classes, we morphed this MobileNet neural network into a binary classifier by having it output only whether the object was a trash can or not. A future method for this could be to train our own classifier instead of using transfer learning or eliminating the last several layers of a deep network and appending a boosting, support vector machine, etc. classifier since this method will save memory by eliminating the deep layers that learn other object classes. 
+We used a platform called Gluon \cite{gluoncvnlp2019} that allowed us to create a transfer learning model to learn the trash cans. 
+We used an efficient model designed specifically for mobile and embedded vision applications called efficient MobileNet, that had been pretrained on the VOC database using Single Shot MultiBox Detector (SSD) algorithm\cite{Howard2017MobileNetsEC,Liu2016SSDSS} to learn the trash cans. 
+Since we did not need all the object classes, we morphed this MobileNet neural network into a binary classifier by having it output only whether the object was a trash can or not.
+A future method for this could be to train our own classifier instead of using transfer learning or eliminating the last several layers of a deep network and appending a boosting, support vector machine, etc. classifier since this method will save memory by eliminating the deep layers that learn other object classes. 
 
 \subsection{BOOSTING ACCURACY VIA POST TRAINING IMAGE PROCESSING}
 \label{ssec:boosting}

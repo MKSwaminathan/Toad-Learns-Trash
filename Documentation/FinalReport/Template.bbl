@@ -29,6 +29,19 @@ Jian Guo, He~He, Tong He, Leonard Lausen, Mu~Li, Haibin Lin, Xingjian Shi,
   language processing,''
 \newblock {\em arXiv preprint arXiv:1907.04433}, 2019.
 
+\bibitem{Howard2017MobileNetsEC}
+Andrew~G. Howard, Menglong Zhu, Bo~Chen, Dmitry Kalenichenko, Weijun Wang,
+  Tobias Weyand, Marco Andreetto, and Hartwig Adam,
+\newblock ``Mobilenets: Efficient convolutional neural networks for mobile
+  vision applications,''
+\newblock {\em ArXiv}, vol. abs/1704.04861, 2017.
+
+\bibitem{Liu2016SSDSS}
+Wei Liu, Dragomir Anguelov, Dumitru Erhan, Christian Szegedy, Scott~E. Reed,
+  Cheng-Yang Fu, and Alexander~C. Berg,
+\newblock ``Ssd: Single shot multibox detector,''
+\newblock in {\em ECCV}, 2016.
+
 \bibitem{guiding_blind}
 Slim Kammoun, Christophe Jouffrais, Tiago Guerreiro, Hugo Nicolau, and Joaquim
   Jorge,
