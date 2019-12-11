@@ -3,7 +3,7 @@
 %          IEEEbib.bst - IEEE bibliography style file.
 % --------------------------------------------------------------------------
 \documentclass{article}
-\usepackage{spconf,amsmath,graphicx}
+\usepackage{spconf,amsmath,graphicx,url}
 
 % Example definitions.
 % --------------------
@@ -90,31 +90,28 @@ not a colon.
 \subsection{REALSENSE CAMERA}
 \label{ssec:realsense}
 
-For this device, we used an Intel Realsense D435 camera to use to detect the trash cans. We chose this because of its relatively small size and since it had two lenses that we could extrapolate depth from. The camera also had depth sensing capabilities, but we chose not to use that and instead use triangulation properties to infer depth because if this device were to become an actual product, the cost of obtaining a camera with depth capabilities are significantly more expensive than using two cameras side by side. The horizontal FOV (field of vision) for the Realsense camera is 86 degrees and the vertical is 57 degrees. We used the librealsense python interface \[\] to capture the individual frames to use for processing. We did not have the capabilities to change the frame of the camera, but we instead modulated the rate at which we sampled the frame in software. 
+For this device, we used an Intel Realsense D435 camera to use to detect the trash cans. We chose this because of its relatively small size and since it had two lenses that we could extrapolate depth from. The camera also had depth sensing capabilities, but we chose not to use that and instead use triangulation properties to infer depth because if this device were to become an actual product, the cost of obtaining a camera with depth capabilities are significantly more expensive than using two cameras side by side. The horizontal FOV (field of vision) for the Realsense camera is 86 degrees and the vertical is 57 degrees. We used the librealsense python interface \cite{realsense} to capture the individual frames to use for processing. We did not have the capabilities to change the frame of the camera, but we instead modulated the rate at which we sampled the frame in software. 
 
 \subsection{FRAME PRE-PROCESSING}
 \label{ssec:frprep}
 
-Ultimately, this device is supposed to be a wearable device, and we kept that in mind as we determined the frame image pre-processing. From training our model, discussed in the model section, we realized that we did not need such a high resolution for the model to work and detect the trash can, so we experimented with downsampling 
+Ultimately, this device is supposed to be a wearable device, and we kept that in mind as we determined the frame image pre-processing. From training our model, discussed in the model section, we realized that we did not need such a high resolution for the model to work and detect the trash can, so we experimented with downsampling amounts, given by the following forrmula, $J(i) = I(Li)]$ \cite{Bovik19}, where L is the downsampling rate. We used OpenCV \cite{opencv_library} to specify the end dimensions instead of L. We found that we could donwsample the image as much as half its dimensions, or $L = 2$ and the model still worked just as well. This also helped the latency of the device. 
 
 \subsection{DATA PRUNING AND CONNECTED COMPONENT LABELING}
 \label{ssec:dataprune}
 
-Subheadings should appear in lower case (initial word capitalized) in
-boldface.  They should start at the left margin on a separate line.
- 
+Since the portion of ImageNet that corresponded with trash can images was under maintenence as we were unable to access it, the ADE20K \cite{zhou2017scene}, was a dataset that we found that fulfilled our purpose. It contained images with prer-segmented components corresponding to object classes. We took the images with trash cans and counted the number of trash cans in an image using conected component labeling, and used the fully connected component to draw a bounding box around the trash cans. We then overlayed the coordinated of this bounding box on the original image to feed into our model. 
+
 \subsection{THE MODEL}
 \label{ssec:themodel}
 
-Subheadings should appear in lower case (initial word capitalized) in
-boldface.  They should start at the left margin on a separate line.
- 
+We used a platform called Gluon \cite{gluoncvnlp2019} that allowed us to create a transfer learning model to learn the trash cans. We used a MobileNet1.0 model to learn the trash cans. Since we did not need all the object classes, we morphed this MobileNet neural network into a binary classifier by having it output only whether the object was a trash can or not. A future method for this could be to train our own classifier instead of using transfer learning or eliminating the last several layers of a deep network and appending a boosting, support vector machine, etc. classifier since this method will save memory by eliminating the deep layers that learn other object classes. 
+
 \subsection{BOOSTING ACCURACY VIA POST TRAINING IMAGE PROCESSING}
 \label{ssec:boosting}
 
-Subheadings should appear in lower case (initial word capitalized) in
-boldface.  They should start at the left margin on a separate line.
- 
+As we trained the model on our trash can images, we noticed that there was not a very high confidence value given to a trash can and the model generalized dark rectangular objects as trash cans when they were not. To account for this, since we had limited data as well, we used several image processing techniques to feed in better images into the network. We experimented with several prssibilities and combinations, including edge filtering and Felsenszwalb's graph based image segmentation to boost edges, and ended up chosing a combination of median filtering and erosion with a crosshair kernel on the image. The intuition behind using a median filter was that it denoised the image enough so that it eliminated noise but maintained the edge details of the trash cans. The erosion was used because the Realsense produced small white dots that were distorting the image slightly. 
+
 \subsection{BINOCULAR CAMERA GEOMETRY AND TRIANGULATION FOR DEPTH APPROXIMATION}
 \label{ssec:triangulation}
 
@@ -125,7 +122,43 @@ boldface.  They should start at the left margin on a separate line.
 \subsection{THE DEVICE}
 \label{ssec:thedevice}
 
-The device is in the form of a wrist band that contains a 2-dimensional array of haptic motors to relay angular position and distance feedback to the user corresponding to the found trash can. The corresponding LED grid was only for demo purposes so that the audience can view which haptic motors are being activated. We decided on a wrist cuff since the study from the paper, Guiding Blind People with Haptic Feedback, found that the wrist and spine were the best places to detect vibrational impulses \[\]. In their study they used 2 wristbands, but we decided to go with one wristband representing 86 degrees since this was the horizontal FOV (field of vision) of the Intel Realsense camera.
+The device is in the form of a wrist band that contains a 2-dimensional array of haptic motors to relay angular position and distance feedback to the user corresponding to the found trash can. The corresponding LED grid was only for demo purposes so that the audience can view which haptic motors are being activated. We decided on a wrist cuff since the study from the paper, Guiding Blind People with Haptic Feedback, found that the wrist and spine were the best places to detect vibrational impulses \cite{guiding_blind}. In their study they used 2 wristbands, but we decided to go with one wristband representing 86 degrees since this was the horizontal FOV (field of vision) of the Intel Realsense camera.
+
+% Below is an example of how to insert images. Delete the ``\vspace'' line,
+% uncomment the preceding line ``\centerline...'' and replace ``imageX.ps''
+% with a suitable PostScript file name.
+% -------------------------------------------------------------------------
+\begin{center}
+\begin{figure}[ht]
+
+\begin{minipage}[b]{1.0\linewidth}
+  \centering
+  \centerline{\includegraphics[width=8.5cm]{worn.JPG}}
+%  \vspace{2.0cm}
+  \centerline{(a) Device worn on wrist}\medskip
+\end{minipage}
+%
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+  \centerline{\includegraphics[width=4.0cm]{hapticmotors.JPG}}
+%  \vspace{1.5cm}
+  \centerline{(b) Haptic motor grid}\medskip
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+  \centerline{\includegraphics[width=4.0cm]{lit.JPG}}
+%  \vspace{1.5cm}
+  \centerline{(c) LED grid}\medskip
+\end{minipage}
+%
+\caption{Pictures of the physical device.}
+\label{figures}
+%
+\end{figure}
+\end{center}
+
+
 
 \section{RESULTS}
 \label{sec:results}
@@ -152,52 +185,6 @@ In LaTeX, to start a new column (but not a new page) and help balance the
 last-page column lengths, you can use the command ``$\backslash$pagebreak'' as
 demonstrated on this page (see the LaTeX source below).
 
-\section{ILLUSTRATIONS, GRAPHS, AND PHOTOGRAPHS}
-\label{sec:illust}
-
-Illustrations must appear within the designated margins.  They may span the two
-columns.  If possible, position illustrations at the top of columns, rather
-than in the middle or at the bottom.  Caption and number every illustration.
-All halftone illustrations must be clear black and white prints.  Colors may be
-used, but they should be selected so as to be readable when printed on a
-black-only printer.
-
-Since there are many ways, often incompatible, of including images (e.g., with
-experimental results) in a LaTeX document, below is an example of how to do
-this \cite{Lamp86}.
-
-% Below is an example of how to insert images. Delete the ``\vspace'' line,
-% uncomment the preceding line ``\centerline...'' and replace ``imageX.ps''
-% with a suitable PostScript file name.
-% -------------------------------------------------------------------------
-\begin{figure}[htb]
-
-\begin{minipage}[b]{1.0\linewidth}
-  \centering
-  \centerline{\includegraphics[width=8.5cm]{image1}}
-%  \vspace{2.0cm}
-  \centerline{(a) Result 1}\medskip
-\end{minipage}
-%
-\begin{minipage}[b]{.48\linewidth}
-  \centering
-  \centerline{\includegraphics[width=4.0cm]{image3}}
-%  \vspace{1.5cm}
-  \centerline{(b) Results 3}\medskip
-\end{minipage}
-\hfill
-\begin{minipage}[b]{0.48\linewidth}
-  \centering
-  \centerline{\includegraphics[width=4.0cm]{image4}}
-%  \vspace{1.5cm}
-  \centerline{(c) Result 4}\medskip
-\end{minipage}
-%
-\caption{Example of placing a figure with experimental results.}
-\label{fig:res}
-%
-\end{figure}
-
 
 % To start a new column (but not a new page) and help balance the last-page
 % column length use \vfill\pagebreak.
@@ -211,6 +198,6 @@ this \cite{Lamp86}.
 % style file from IEEE produces unsorted bibliography list.
 % -------------------------------------------------------------------------
 \bibliographystyle{IEEEbib}
-\bibliography{strings,refs}
+\bibliography{references}
 
 \end{document}

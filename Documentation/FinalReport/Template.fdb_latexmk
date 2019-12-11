@@ -1,13 +1,12 @@
 # Fdb version 3
-["bibtex Template"] 1576035970 "Template.aux" "Template.bbl" "Template" 1576035970
+["bibtex Template"] 1576040686 "Template.aux" "Template.bbl" "Template" 1576040687
   "./IEEEbib.bst" 1575860987 17902 d17ce47b20649379bfa5bce95e55ed5b ""
-  "Template.aux" 1576035970 2279 dfc92168afa32dd6dcd990ed5edb59c1 "pdflatex"
-  "refs.bib" 1575860987 245 0aa0bf81f340a906e0f64945f4032473 ""
-  "strings.bib" 1575860987 225 a7a1e30a4dbf091bbadb81624102c966 ""
+  "Template.aux" 1576040687 2358 66f52cb56c80854f42f8c1b749c3cf70 "pdflatex"
+  "references.bib" 1576039917 2551 6127bfc722eeb0305bc5e057f1acbac2 ""
   (generated)
   "Template.bbl"
   "Template.blg"
-["pdflatex"] 1576035970 "Template.tex" "Template.pdf" "Template" 1576035970
+["pdflatex"] 1576040686 "Template.tex" "Template.pdf" "Template" 1576040687
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -32,6 +31,8 @@
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
+  "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb" 1136849748 45758 19968a0990191524e34e1994d4a31cb6 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb" 1136849748 44729 811d6c62865936705a31c797a1d5dada ""
@@ -71,18 +72,19 @@
   "/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty" 1463608860 22417 1d9df1eb66848aa31b18a593099cf45c ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pcr.fd" 1137110629 985 1ed784d7bfe47179f3550d2303b073f8 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ptm.fd" 1137110629 961 15056f4a61917ceed3a44e4ac11fcc52 ""
+  "/usr/local/texlive/2019/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf" 1557092114 35484 cb1661360667bf4db662a8895053b554 ""
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1557342086 4259635 562fc36ec496993777a6c428d8bfb811 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "Template.aux" 1576035970 2279 dfc92168afa32dd6dcd990ed5edb59c1 "pdflatex"
-  "Template.bbl" 1576035970 201 0abfea4e3325c140415c97976609e213 "bibtex Template"
-  "Template.tex" 1576035968 9907 f4e5ce5824aa23e0090a716f0b3fb5af ""
-  "image1.eps" 1575860987 24261 d1d13439ab81baa20bb873ed8c6ef89f ""
-  "image3.eps" 1575860987 24252 5b989dc50d98d66a6a1a9b1181eddf09 ""
-  "image4.eps" 1575860987 23170 20aab41daeefce8233fac7ae189a2193 ""
+  "Template.aux" 1576040687 2358 66f52cb56c80854f42f8c1b749c3cf70 "pdflatex"
+  "Template.bbl" 1576040686 1261 2ddfd44c6282c135d1fae96e610bb451 "bibtex Template"
+  "Template.tex" 1576040684 11442 60790b382331d963d8f43cb77bd3b78e ""
+  "hapticmotors.JPG" 1576038896 3271866 81cc471c7b9ed3081265b92bbe2bc816 ""
+  "lit.JPG" 1576038896 1951476 93286e82fddbb75786a65e5d39778a53 ""
   "spconf.sty" 1575860987 8797 eb955f603576c283c1c29eaa8124a014 ""
+  "worn.JPG" 1576038896 1948632 e5d92193c1ac9bf2d7dded06cdb6496f ""
   (generated)
   "Template.log"
-  "Template.pdf"
   "Template.aux"
+  "Template.pdf"
