@@ -77,7 +77,7 @@ try:
             continue
         
         # Convert images to numpy arrays
-        nir_lf_image = np.asanyarray(nir_lf_frame.get_data())
+        ir_lf_image = np.asanyarray(nir_lf_frame.get_data())
         nir_rg_image = np.asanyarray(nir_rg_frame.get_data())
 
         # Stack both images horizontally
@@ -85,6 +85,24 @@ try:
  
     
         # Image pre-processing
+        
+        # Downsample the image by half orig size
+        # significantly improves tracking of the trash can
+        cv2.resize(nir_lf_image,(350,240))
+        
+        # Denoise to remove high frequencies - preserve edges
+        # Prevents small rectangles from being classified as trashcans
+        nir_lf_image = cv2.medianBlur(nir_lf_image,1)
+        nir_rg_image = cv2.medianBlur(nir_rg_image,1)
+       
+        # Erode white spots from camera
+        # Found that crosshair kernel works the best
+        kernel = np.array([0,1,0,1,1,1,0,1,0],dtype=np.uint8)
+        nir_lf_image = cv2.erode(nir_lf_image,kernel)
+        nir_rg_image = cv2.erode(nir_rg_image,kernel)
+        nir_lf_image = apply_brightness_contrast(nir_lf_image,40,20)
+
+        # Do a color conversion to RGB
         frame_lf = mx.nd.array(cv2.cvtColor(nir_lf_image, cv2.COLOR_BGR2RGB)).astype('uint8')
         frame_rg = mx.nd.array(cv2.cvtColor(nir_rg_image, cv2.COLOR_BGR2RGB)).astype('uint8')
 
@@ -92,6 +110,7 @@ try:
         rgb_nd_rg, frame_rg = gcv.data.transforms.presets.ssd.transform_test(frame_rg, short=512, max_size=700)
     
 
+        
         # Run frame through network
         class_IDs_lf, scores_lf, bounding_boxes_lf = net(rgb_nd_lf)
         class_IDs_rg, scores_rg, bounding_boxes_rg = net(rgb_nd_rg)
@@ -107,57 +126,65 @@ try:
         trash_bound = np.r_[-1,-1,-1,-1]
         scores_lf = scores_lf.asnumpy()
         scores_rg = scores_rg.asnumpy()
+        angle = -1
+        orig_depth = -1
+        
         
         if((scores_lf[0,0,0] >= thresh) and (scores_rg[0,0,0]>=thresh)):
             trash_bound = bounding_boxes_lf[0,0].asnumpy()
        
-        X = 512
-        Y = 700
-        y = 0.5*(trash_bound[0] + trash_bound[2])
-        x = 0.5*(trash_bound[1] + trash_bound[3])
-        angle = -1
+            X = 512
+            Y = 700
+            y = 0.5*(trash_bound[0] + trash_bound[2])
+            x = 0.5*(trash_bound[1] + trash_bound[3])
 
-        if y/Y >= 0 and y/Y < 0.2:
-            angle = 0
-        if y/Y >=0.2 and y/Y < 0.4:
-            angle = 1
-        if y/Y >= 0.4 and y/Y < 0.6:
-            angle = 2
-        if y/Y >= 0.6 and y/Y < 0.8:
-            angle = 3
-        if y/Y >= 0.8 and y/Y <= 1:
-            angle = 4
-        #print (angle)
+            if y/Y >= 0 and y/Y < 0.2:
+                angle = 0
+            if y/Y >=0.2 and y/Y < 0.4:
+                angle = 1
+            if y/Y >= 0.4 and y/Y < 0.6:
+                angle = 2
+            if y/Y >= 0.6 and y/Y < 0.8:
+                angle = 3
+            if y/Y >= 0.8 and y/Y <= 1:
+                angle = 4
+            #print (angle)
    
-        # Find depth
-        bound_lf = bounding_boxes_lf[0,0].asnumpy()
-        bound_rg = bounding_boxes_rg[0,0].asnumpy()
-        x_lf_min = bound_lf[1]
-        x_lf_max = bound_lf[3]
+            # Find depth
+            bound_lf = bounding_boxes_lf[0,0].asnumpy()
+            bound_rg = bounding_boxes_rg[0,0].asnumpy()
+            x_lf_min = bound_lf[1]
+            x_lf_max = bound_lf[3]
+            y_lf_min = bound_lf[0]
+            y_lf_max = bound_lf[2]
 
-        x_rg_min = bound_rg[1]
-        x_rg_max = bound_rg[3]
+            x_rg_min = bound_rg[1]
+            x_rg_max = bound_rg[3]
+            y_rg_min = bound_rg[0]
+            y_rg_max = bound_rg[2]
+            
+            x_lf = 0.5*(x_lf_min + x_lf_max)
+            x_rg = 0.5*(x_rg_min + x_rg_max)
 
-        x_lf = 0.5*(x_lf_min + x_lf_max)
-        x_rg = 0.5*(x_rg_min + x_rg_max)
+            depth = -1
+            focal_length = 0.00193
+            cam_dist = 0.05
+            dx = abs(x_lf - x_rg)
 
-        depth = -1
-        focal_length = 0.00193
-        cam_dist = 0.05
-        dx = 100*abs(x_lf - x_rg)
-        print('x_lf: ',x_lf)
-        print('x_rg: ',x_rg)
-        print('dx: ',dx)
+            multiplier = 1#10**8
+            depth = multiplier*(cam_dist*focal_length)/dx
+            orig_depth=2*.05*.00193/np.absolute(x_lf-x_rg)
+            orig_depth = abs(y_lf_max - y_lf_min)/512
+            orig_depth = int(orig_depth*100)/3
+            if orig_depth > 9:
+                orig_depth = 9
+            if orig_depth < 0:
+                orig_depth = 0
+            print('orig_depth',int(orig_depth))
 
-        multiplier = 10**8
-        depth = multiplier*(cam_dist*focal_length)/dx
-        orig_depth=2*.05*.00193/np.absolute(x_lf-x_rg)
-        print('orig_depth',orig_depth)
-        
-        print('depth: ',int(depth))
-
+            
         # Send info to raspi
-        msg = 'START '+ str(int(angle)) + ' ' + str(int(depth)) + ' EOM'
+        msg = 'START '+ str(int(angle)) + ' ' + str(int(orig_depth)) + ' EOM'
         client.send(msg.encode())
         
         # Show images
