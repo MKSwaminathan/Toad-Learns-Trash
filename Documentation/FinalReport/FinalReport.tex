@@ -171,11 +171,21 @@ The device is in the form of a wrist band that contains a 2-dimensional array of
 \section{RESULTS AND IMPROVEMENTS}
 \label{sec:results}
 We tested the device by blindfolding ourselves and equipping the wristband as shown in \textbf{Fig 3.} and camera then relying on the haptic feedback to guide us to the trash can. We turned the person testing the device around several times to disorient them before they set out to find the trash can. This way they had to only rely on the device to guide them to the trash can. It took some time, but the tester was able to find the trash can successfully. Towards the end of the demo, a couple of the haptic motors and LEDs got disconnected, so this means that we need to improve the overall robustness of our prototypes in the future. We also noted that a lot of the localization came from where the camera was with respect to the user. When her hand moved slightly too much to the left towards the end, only the right haptic motors set off, which would have indicated to the user that the trash can was to the right, however, she anticipated that she moved her hand and was still able to find the trash can. This is also something we would need to improve upon. The problem arises when the user moves too close to the camera. Since the trash can takes up the entire frame, even small changes in the way the camera is pointing could mislead the user into thinking that the trash can was far off in one direction. This can be solved by better communication to the user where the trash can is and how far away. In terms of image processing, another thing that could have been done better was to figure out better ways to process the image before feeding it into the model to get better results. Image processing can also be used for training purposes. Perhaps we could one day artificially create our own hidden colvolutional layers based off of filtering properties to help the network converge. In summary, our device was successful, but we have an incredibly long way to go and a major amount to learn. See \textbf{Appendix} for link to code.
+\begin{center}
 \begin{figure}[ht]
-    \centering
-    \includegraphics[width=.6\columnwidth]{demo.jpg}
-    \caption{\label{fig:3} Us testing the device ourselves.}
+
+\begin{minipage}[b]{1.0\linewidth}
+  \centering
+  \centerline{\includegraphics[width=8.5cm]{thedemo.jpg}}
+%  \vspace{2.0cm}
+\end{minipage}
+\caption{Testing of the physical device.}
+\label{figures3}
+%
 \end{figure}
+\end{center}
+
+
 
 
 \section{CONCLUSION}
